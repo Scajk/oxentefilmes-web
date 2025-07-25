@@ -23,10 +23,10 @@ export default function Navbar() {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    year: "",
-    imageUrl: "",
-    trailerUrl: "",
-    category: "",
+    release_year: "",
+    genre: "",
+    poster_url: "",
+    trailer_url: "",
   });
 
   const [error, setError] = useState<string | null>(null);
@@ -40,24 +40,33 @@ export default function Navbar() {
     e.preventDefault();
     setError(null);
 
-    if (!form.title || !form.description || !form.year || !form.imageUrl || !form.trailerUrl || !form.category) {
-      setError("Preencha todos os campos.");
+    if (!form.title || !form.description || !form.release_year || !form.genre || !form.poster_url) {
+      setError("Preencha todos os campos obrigatórios.");
       return;
     }
 
     try {
+      const payload = {
+        ...form,
+        release_year: Number(form.release_year),
+      };
+
       const res = await fetch("http://localhost:3001/movies", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, year: Number(form.year) }),
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) throw new Error("Erro ao adicionar filme.");
 
       setModalOpen(false);
-      setForm({ title: "", description: "", year: "", imageUrl: "", trailerUrl: "", category: "" });
-    } catch (err: any) {
-      setError(err.message || "Erro desconhecido.");
+      setForm({ title: "", description: "", release_year: "", genre: "", poster_url: "", trailer_url: "" });
+    } catch (err) {
+      let errorMessage = "Ocorreu um erro desconhecido.";
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
+      setError(errorMessage);
     }
   }
 
@@ -165,20 +174,20 @@ export default function Navbar() {
               <Textarea name="description" value={form.description} onChange={handleChange} />
             </div>
             <div>
-              <Label htmlFor="year">Ano</Label>
-              <Input type="number" name="year" value={form.year} onChange={handleChange} />
+              <Label htmlFor="release_year">Ano</Label>
+              <Input type="number" name="release_year" value={form.release_year} onChange={handleChange} />
             </div>
             <div>
-              <Label htmlFor="category">Categoria</Label>
-              <Input name="category" value={form.category} onChange={handleChange} />
+              <Label htmlFor="genre">Categoria</Label>
+              <Input name="genre" value={form.genre} onChange={handleChange} />
             </div>
             <div>
-              <Label htmlFor="imageUrl">URL da Imagem</Label>
-              <Input name="imageUrl" value={form.imageUrl} onChange={handleChange} />
+              <Label htmlFor="poster_url">URL da Imagem</Label>
+              <Input name="poster_url" value={form.poster_url} onChange={handleChange} />
             </div>
             <div>
-              <Label htmlFor="trailerUrl">URL do Trailer</Label>
-              <Input name="trailerUrl" value={form.trailerUrl} onChange={handleChange} />
+              <Label htmlFor="trailer_url">URL do Trailer</Label>
+              <Input name="trailer_url" value={form.trailer_url} onChange={handleChange} />
             </div>
             <Button type="submit" className="w-full bg-primary text-white hover:bg-primary/90">
               Salvar Filme

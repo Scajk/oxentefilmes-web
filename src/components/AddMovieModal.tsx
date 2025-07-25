@@ -68,8 +68,12 @@ export function AddMovieModal() {
         trailer_url: "",
       });
       setOpen(false);
-    } catch (err: any) {
-      setError(err.message || "Erro desconhecido.");
+    } catch (err) {
+      let errorMessage = "Ocorreu um erro desconhecido.";
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
+      setError(errorMessage);
     }
   }
 
