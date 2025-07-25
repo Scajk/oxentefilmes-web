@@ -11,7 +11,7 @@ export default function Footer() {
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
           <FaXTwitter className="h-5 w-5 hover:text-white transition-colors" />
         </a>
-        <a href="https://linkedin.com/in/sergiodecastroo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/vitor-junio-475ab927b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <Linkedin className="h-5 w-5 hover:text-blue-700 transition-colors" />
         </a>
         <a href="https://github.com/scajk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
