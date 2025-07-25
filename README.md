@@ -1,34 +1,32 @@
-# VortexShop
+# OxenteFilmes
 
-![Logo VortexShop](./public/vortexshop_logo_trimmed_transparent.png)
+![Logo OxenteFilmes](./public/logo.png)
 
 ## Sobre o projeto
 
-VortexShop é uma loja virtual moderna, desenvolvida com React, TypeScript e Tailwind CSS.  
-A aplicação consome a Fake Store API para exibir produtos reais, oferecendo funcionalidades como filtros por categoria, tema claro/escuro, menu hamburguer responsivo, e carrinho de compras.
-- https://scajk.github.io/VortexShop/
+OxeFilmes é uma plataforma de catálogo de filmes.  
+O projeto é composto por um frontend moderno em React (com ShadCN e Tailwind) e um backend próprio em Node.js/Express com banco de dados MySQL.  
+Permite aos usuários cadastrar, visualizar e explorar filmes com título, descrição, ano, categoria, imagem e trailer.
 
 ---
 
 ## Tecnologias Utilizadas
 
-- React 18
-- TypeScript
-- Tailwind CSS
-- Lucide Icons
-- Fake Store API ([https://fakestoreapi.com](https://fakestoreapi.com))
+- React 18 + TypeScript
 - Vite
+- Tailwind CSS + ShadCN/UI
+- Lucide Icons
 
 ---
 
 ## Funcionalidades
 
-- Listagem de produtos com filtro por categorias dinâmicas  
-- Menu hamburguer responsivo com bloqueio de scroll  
-- Toggle para tema claro/escuro  
-- Carrinho de compras integrado no navbar  
-- Tratamento de erros na requisição à API  
-- Botões com animações e feedbacks visuais  
+- Modal para adicionar filmes
+- Integração com API RESTful
+- Formulário com validação completa (URL, campos obrigatórios)
+- Cadastro de título, descrição, ano, imagem, trailer e categoria
+- Layout responsivo e estilizado com ShadCN
+- Feedback visual de sucesso e erro
 
 ---
 
@@ -36,15 +34,16 @@ A aplicação consome a Fake Store API para exibir produtos reais, oferecendo fu
 
 ### Pré-requisitos
 
-- Node.js (versão 16 ou superior)
+- Node.js (v16 ou superior)
+- MySQL rodando localmente (porta padrão: 3306)
 - npm ou yarn
 
 ### Passos
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Scajk/VortexShop.git
-cd VortexShop
+git clone https://github.com/Scajk/OxenteFilmes-web.git
+cd OxenteFilmes-web
 
 # Instale as dependências
 npm install
