@@ -4,10 +4,9 @@
 
 ## Sobre o projeto
 
-OxeFilme é uma plataforma de catálogo de filmes inspirada na cultura vibrante do Nordeste do Brasil.  
+OxeFilmes é uma plataforma de catálogo de filmes.  
 O projeto é composto por um frontend moderno em React (com ShadCN e Tailwind) e um backend próprio em Node.js/Express com banco de dados MySQL.  
 Permite aos usuários cadastrar, visualizar e explorar filmes com título, descrição, ano, categoria, imagem e trailer.
-- https://scajk.github.io/VortexShop/
 
 ---
 
